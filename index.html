@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第３章｜警備業に関する法律知識（各論）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0d;
+    --paper: #f5f0e8;
+    --accent: #c8392b;
+    --accent2: #1a5276;
+    --accent3: #117a65;
+    --gold: #b7860b;
+    --muted: #6b6560;
+    --line: #d4cfc5;
+    --card: #faf7f2;
+    --law1: #e8f4fd;
+    --law2: #fef9e7;
+    --law3: #eafaf1;
+    --law4: #fdf2f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg, transparent, transparent 20px,
+      rgba(255,255,255,.03) 20px, rgba(255,255,255,.03) 40px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .2em;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: .3rem .8rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    font-size: clamp(1.6rem, 5vw, 2.8rem);
+    letter-spacing: .05em;
+    position: relative;
+  }
+  header p {
+    margin-top: .6rem;
+    font-size: .9rem;
+    color: rgba(245,240,232,.6);
+    font-weight: 300;
+    position: relative;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    border-bottom: 3px solid var(--accent);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex: none;
+    padding: .85rem 1.4rem;
+    color: rgba(245,240,232,.6);
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: .08em;
+    cursor: pointer;
+    border: none;
+    background: none;
+    white-space: nowrap;
+    transition: all .2s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+  }
+  .nav-btn:hover { color: var(--paper); }
+  .nav-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+
+  .section { display: none; animation: fadeIn .3s ease; }
+  .section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .sec-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    padding-bottom: .7rem;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+  }
+  .sec-num {
+    font-family: 'DM Mono', monospace;
+    font-size: .85rem;
+    background: var(--accent);
+    color: #fff;
+    padding: .15rem .5rem;
+    letter-spacing: .1em;
+  }
+
+  .law-box {
+    border-left: 4px solid var(--accent2);
+    background: var(--law1);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    font-size: .88rem;
+    position: relative;
+  }
+  .law-box .law-label {
+    font-family: 'DM Mono', monospace;
+    font-size: .72rem;
+    color: var(--accent2);
+    font-weight: 500;
+    letter-spacing: .12em;
+    margin-bottom: .4rem;
+  }
+  .law-box.criminal { border-color: var(--gold); background: var(--law2); }
+  .law-box.criminal .law-label { color: var(--gold); }
+  .law-box.civil { border-color: #8e44ad; background: var(--law4); }
+  .law-box.civil .law-label { color: #8e44ad; }
+  .law-box.green { border-color: var(--accent3); background: var(--law3); }
+  .law-box.green .law-label { color: var(--accent3); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+    border-radius: 2px;
+  }
+  .card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .7rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .card h3 .icon {
+    width: 24px; height: 24px;
+    background: var(--ink);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    font-family: 'DM Mono', monospace;
+    flex-shrink: 0;
+  }
+
+  .accordion { border: 1px solid var(--line); margin: .6rem 0; }
+  .acc-header {
+    padding: .9rem 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: .9rem;
+    background: var(--card);
+    user-select: none;
+    transition: background .2s;
+  }
+  .acc-header:hover { background: #eee9de; }
+  .acc-header .arrow {
+    font-size: .7rem;
+    transition: transform .25s;
+    color: var(--muted);
+    flex-shrink: 0;
+    margin-left: .5rem;
+  }
+  .acc-header.open .arrow { transform: rotate(180deg); }
+  .acc-body {
+    display: none;
+    padding: 1rem 1.2rem;
+    font-size: .88rem;
+    border-top: 1px solid var(--line);
+    background: #fff;
+    line-height: 1.9;
+  }
+  .acc-body.open { display: block; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .grid-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 1rem 1.2rem;
+    border-top: 3px solid var(--accent2);
+  }
+  .grid-card.red   { border-top-color: var(--accent); }
+  .grid-card.green { border-top-color: var(--accent3); }
+  .grid-card.gold  { border-top-color: var(--gold); }
+  .grid-card.purple{ border-top-color: #8e44ad; }
+  .grid-card.blue  { border-top-color: var(--accent2); }
+
+  .grid-card h4 {
+    font-weight: 700;
+    font-size: .88rem;
+    margin-bottom: .5rem;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .grid-card p { font-size: .82rem; color: #333; line-height: 1.8; }
+
+  .tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: .68rem;
+    padding: .15rem .5rem;
+    letter-spacing: .1em;
+    margin: .2rem .2rem .2rem 0;
+    border-radius: 1px;
+  }
+  .tag-red    { background: #fde8e8; color: var(--accent); border: 1px solid #f5c6c6; }
+  .tag-blue   { background: #e8f0fe; color: var(--accent2); border: 1px solid #c5d5f5; }
+  .tag-green  { background: #e8f7f0; color: var(--accent3); border: 1px solid #b5e0cc; }
+  .tag-gold   { background: #fef9e7; color: var(--gold); border: 1px solid #f5e0a0; }
+  .tag-purple { background: #f5eef8; color: #8e44ad; border: 1px solid #d7bde2; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .82rem;
+    margin: 1rem 0;
+  }
+  th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: .6rem .8rem;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: .05em;
+  }
+  td {
+    padding: .6rem .8rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+  tr:nth-child(even) td { background: var(--card); }
+
+  .highlight {
+    background: #fff3cd;
+    border-left: 3px solid var(--gold);
+    padding: .7rem 1rem;
+    margin: .8rem 0;
+    font-size: .87rem;
+  }
+  .highlight strong { color: #7d5a00; }
+
+  .warn {
+    background: #fdecea;
+    border-left: 3px solid var(--accent);
+    padding: .7rem 1rem;
+    margin: .8rem 0;
+    font-size: .87rem;
+  }
+
+  .info {
+    background: #e8f4fd;
+    border-left: 3px solid var(--accent2);
+    padding: .7rem 1rem;
+    margin: .8rem 0;
+    font-size: .87rem;
+  }
+
+  .ok {
+    background: var(--law3);
+    border-left: 3px solid var(--accent3);
+    padding: .7rem 1rem;
+    margin: .8rem 0;
+    font-size: .87rem;
+  }
+
+  .steps { margin: 1rem 0; }
+  .step {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: .8rem;
+    align-items: flex-start;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: .8rem;
+    margin-top: .1rem;
+  }
+  .step-num.red   { background: var(--accent); }
+  .step-num.green { background: var(--accent3); }
+  .step-num.gold  { background: var(--gold); }
+  .step-body { font-size: .88rem; flex: 1; }
+  .step-body strong { display: block; font-weight: 700; margin-bottom: .2rem; }
+
+  .styled-list { list-style: none; padding: 0; margin: .6rem 0; }
+  .styled-list li {
+    padding: .35rem 0 .35rem 1.4rem;
+    font-size: .87rem;
+    position: relative;
+    border-bottom: 1px dashed var(--line);
+  }
+  .styled-list li:last-child { border-bottom: none; }
+  .styled-list li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: .6rem;
+    top: .55rem;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: .2rem .6rem;
+    font-size: .72rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: .08em;
+    font-weight: 500;
+    border-radius: 2px;
+  }
+  .badge-red    { background: var(--accent); color: #fff; }
+  .badge-blue   { background: var(--accent2); color: #fff; }
+  .badge-green  { background: var(--accent3); color: #fff; }
+  .badge-gold   { background: var(--gold); color: #fff; }
+  .badge-purple { background: #8e44ad; color: #fff; }
+
+  .divider { border: none; border-top: 1px solid var(--line); margin: 1.5rem 0; }
+
+  .flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin: 1rem 0;
+    font-size: .82rem;
+  }
+  .flow-box {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: .4rem .8rem;
+    font-weight: 500;
+    border-radius: 2px;
+  }
+  .flow-arrow { color: var(--muted); font-size: 1.2rem; }
+  .flow-box.red   { background: #fde8e8; border-color: var(--accent); color: var(--accent); }
+  .flow-box.green { background: var(--law3); border-color: var(--accent3); color: var(--accent3); }
+  .flow-box.blue  { background: var(--law1); border-color: var(--accent2); color: var(--accent2); }
+  .flow-box.gold  { background: var(--law2); border-color: var(--gold); color: var(--gold); }
+
+  /* チェックリスト */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: .6rem;
+    padding: .5rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: .87rem;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: '□';
+    color: var(--accent);
+    font-size: 1rem;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+
+  /* 事例ボックス */
+  .case-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent);
+    padding: 1rem 1.2rem;
+    margin: .8rem 0;
+    font-size: .87rem;
+  }
+  .case-label {
+    font-family: 'DM Mono', monospace;
+    font-size: .68rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: .12em;
+    margin-bottom: .4rem;
+  }
+
+  sub { font-size: .7em; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">CHAPTER 03</div>
+  <h1>警備業に関する法律知識</h1>
+  <p>刑法 ／ 刑事訴訟法 ／ 遺失物法 ／ 民法 ／ 関係法令</p>
+</header>
+
+<nav>
+  <button class="nav-btn active" onclick="show('s1', this)">１.財産犯・対人犯罪</button>
+  <button class="nav-btn" onclick="show('s2', this)">２.刑事訴訟法</button>
+  <button class="nav-btn" onclick="show('s3', this)">３.遺失物法</button>
+  <button class="nav-btn" onclick="show('s4', this)">４.民法</button>
+  <button class="nav-btn" onclick="show('s5', this)">５.関係法令</button>
+</nav>
+
+<main>
+
+<!-- ════════════════════════════════════════════════
+     S1: 財産犯・対人犯罪（刑法）
+════════════════════════════════════════════════ -->
+<div id="s1" class="section active">
+  <div class="sec-title"><span class="sec-num">01</span>財産犯・対人犯罪（刑法）</div>
+
+  <div class="card">
+    <h3><span class="icon">📋</span>警備員が知るべき刑法犯 — 全体像</h3>
+    <p style="font-size:.85rem;margin-bottom:1rem;color:var(--muted)">警備員は、①自分が犯罪者にならないこと、②犯罪を未然に防ぐこと、③犯罪に対して適切に対応すること、の3つの観点から刑法知識が必要。</p>
+    <table>
+      <tr><th>区分</th><th>罪名</th><th>条文</th><th>主な法定刑</th></tr>
+      <tr><td><span class="badge badge-red">財産犯</span></td><td>窃盗罪</td><td>第235条</td><td>10年以下の拘禁刑または50万円以下の罰金</td></tr>
+      <tr><td><span class="badge badge-red">財産犯</span></td><td>詐欺罪</td><td>第246条</td><td>10年以下の拘禁刑</td></tr>
+      <tr><td><span class="badge badge-red">財産犯</span></td><td>横領罪</td><td>第252条</td><td>5年以下の拘禁刑</td></tr>
+      <tr><td><span class="badge badge-red">財産犯</span></td><td>占有離脱物横領罪</td><td>第254条</td><td>1年以下の拘禁刑または10万円以下の罰金</td></tr>
+      <tr><td><span class="badge badge-gold">対人犯</span></td><td>脅迫罪</td><td>第222条</td><td>2年以下の拘禁刑または30万円以下の罰金</td></tr>
+      <tr><td><span class="badge badge-gold">対人犯</span></td><td>強要罪</td><td>第223条</td><td>3年以下の拘禁刑</td></tr>
+      <tr><td><span class="badge badge-gold">対人犯</span></td><td>恐喝罪</td><td>第249条</td><td>10年以下の拘禁刑</td></tr>
+      <tr><td><span class="badge badge-blue">その他</span></td><td>不正競争防止法違反等</td><td>―</td><td>（秘密漏洩等）</td></tr>
+    </table>
+    <div class="highlight">
+      <strong>2022年刑法改正（2025年6月施行）</strong>：「懲役」「禁錮」は廃止され、<strong>「拘禁刑」</strong>に統合。表中の法定刑はすべて改正後の「拘禁刑」表記を使用。
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 窃盗罪 -->
+  <div class="card">
+    <h3><span class="icon">①</span>窃盗罪（刑法第235条）— 警備現場での具体例</h3>
+    <div class="law-box criminal">
+      <div class="law-label">刑法 第235条</div>
+      他人の財物を窃取した者は、窃盗の罪とし、<strong>10年以下の拘禁刑又は50万円以下の罰金</strong>に処する。
+    </div>
+    <div class="law-box criminal">
+      <div class="law-label">刑法 第245条（電気）</div>
+      電気は、財物とみなす。
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">🔌 電気窃盗 — 現場コンセントでスマホを充電する<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        刑法第245条により<strong>電気は財物</strong>とみなされる。無断でコンセントを使ってスマホを充電する行為は、被害額がたとえ数円であっても<strong>窃盗罪</strong>が成立する。<br><br>
+        <div class="warn">
+          ⚠ 「バレなければいい」は通用しない。現代の現場では<strong>スマートメーター・防犯カメラ</strong>が普及しており、本来人がいない時間の電力使用や動きがデータとして記録される。<br>
+          発覚すれば「窃盗犯がいる警備会社」として<strong>契約解除・営業停止・許可取消</strong>のリスクがある。被害額1円でも処分は重大。
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">🚿 水道の無断使用 — 私的な洗車・容器への詰め替え<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        施設外の蛇口を勝手に使って自分の車を洗う、私的な容器に水を詰めて持ち帰るなどは水道施設管理者の占有する財物（水）の窃取として<strong>窃盗罪</strong>になりうる。<br>
+        施設の管理権を侵害する点でも問題であり、契約先の信頼を著しく損なう行為。
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">🗑️ 廃棄予定品・「ゴミ」の持ち帰り<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        現場に落ちている「廃棄予定の什器や建築資材」を勝手に持ち帰る行為。<br><br>
+        <table>
+          <tr><th>状況</th><th>成立しうる罪</th></tr>
+          <tr><td>管理者が占有している廃棄物置き場から持ち出す</td><td><strong>窃盗罪</strong>（管理者の占有侵害）</td></tr>
+          <tr><td>すでに占有を離れた廃棄物（ゴミ捨て場以外に放棄）を持ち帰る</td><td><strong>占有離脱物横領罪</strong>（刑法第254条）</td></tr>
+        </table>
+        <div class="highlight">「ゴミだから誰のものでもない」は危険な誤解。ゴミ置き場は管理者の占有下にある。必ず管理者に確認・許可を得ること。</div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">👟 プールでのサンダル「取り違え」— 境界線はどこか<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <table>
+          <tr><th>状況</th><th>成立しうる罪</th><th>ポイント</th></tr>
+          <tr><td>自分のサンダルが見当たらず、似ている他人のサンダルを「間違えて」履く</td><td>過失なら不成立。<strong>故意あれば占有離脱物横領</strong></td><td>「取り違え」を装っていても故意があれば罪になる</td></tr>
+          <tr><td>浮き輪置き場など施設管理区域から意図的に持ち出す</td><td><strong>窃盗罪</strong></td><td>施設の占有を侵害</td></tr>
+          <tr><td>過失で間違えた場合</td><td>刑事責任なし→<strong>民事上の損害賠償</strong></td><td>同等品の返還または弁償義務</td></tr>
+        </table>
+        <div class="highlight">
+          <strong>警備員の実務対応</strong>：遺失物として預かる際は、ブランド・傷・名前の有無を詳細に記録すること。これが「取り違え主張」への証拠となる。
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">🍊 「社交辞令」と窃盗の境界線 — 柿を全部取る事例<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        近隣住民から「柿を（好きなだけ）取っていいよ」と言われ、木を丸裸にするほど全部収穫して持ち帰る行為。<br><br>
+        <div class="grid-2" style="margin:.8rem 0;">
+          <div class="grid-card red">
+            <h4>⚠ 法的な落とし穴</h4>
+            <p>相手が「1〜2個、おやつ程度」と思っていた場合、<strong>相手の真の意思（占有者の意思）</strong>に反する。承諾は「客観的に妥当な範囲」でのみ有効。全部取ることは<strong>窃盗罪</strong>になりうる。</p>
+          </div>
+          <div class="grid-card gold">
+            <h4>💡 不法領得の意思</h4>
+            <p>「全部もらって売ろう」という強い意図は単純な誤解では済まない。民法上も「取りすぎた分は返還か代金を支払う義務」（<strong>不当利得：民法703条</strong>）が生じる。</p>
+          </div>
+        </div>
+        <div class="warn">
+          ⚠ <strong>警備員への警告</strong>：お客さまや住民から「持っていっていいよ」と言われても安易に受け取ると、収賄・窃盗・不祥事として解雇の対象になりうる。<strong>社会的相当性を欠く行動は致命的なミス</strong>。
+        </div>
+        <div style="background:#f7fafc;border:1px solid var(--line);padding:1rem;margin-top:.8rem;border-top:3px solid var(--accent3);">
+          <p style="font-weight:700;font-size:.85rem;margin-bottom:.6rem;">🗒 現場で迷った時のチェックリスト</p>
+          <ul class="checklist">
+            <li>「この量・範囲は、相手が想定した範囲といえるか？」を自問する</li>
+            <li>「上司や会社規定に報告・確認してから受け取る」を徹底する</li>
+            <li>「断ったほうが会社・自分・相手の全員にとって安全か？」を考える</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 詐欺罪 -->
+  <div class="card">
+    <h3><span class="icon">②</span>詐欺罪（刑法第246条）— 経費・勤怠の不正申告</h3>
+    <div class="law-box criminal">
+      <div class="law-label">刑法 第246条</div>
+      人を欺いて財物を交付させた者は、<strong>10年以下の拘禁刑</strong>に処する。
+    </div>
+
+    <div class="grid-2">
+      <div class="grid-card red">
+        <h4>🚲 交通費の二重取り</h4>
+        <p>実際には自転車で通勤しているのに電車代を請求する行為。会社を欺いて金銭を得るため<strong>詐欺罪</strong>が成立する。</p>
+      </div>
+      <div class="grid-card red">
+        <h4>📋 架空の残業・早退隠し</h4>
+        <p>早く現場を離れたのに定時までいたと嘘の報告をして給与を得る行為。給与という財物を不正に取得するため<strong>詐欺罪</strong>が成立する。</p>
+      </div>
+    </div>
+    <div class="warn">
+      ⚠ 現代の現場は<strong>GPS・勤怠管理システム・防犯カメラ</strong>が普及。「バレなければいい」は通用しない。詐欺罪は親告罪でなく会社が告訴すれば刑事事件になる。
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 占有離脱物横領罪 -->
+  <div class="card">
+    <h3><span class="icon">③</span>占有離脱物横領罪（刑法第254条）</h3>
+    <div class="law-box criminal">
+      <div class="law-label">刑法 第254条</div>
+      遺失物、漂流物その他占有を離れた他人の物を横領した者は、<strong>1年以下の拘禁刑又は10万円以下の罰金若しくは科料</strong>に処する。
+    </div>
+    <ul class="styled-list">
+      <li>「拾った財布をしばらく持っていようと思った」→ 横領の故意あり → <strong>占有離脱物横領罪</strong></li>
+      <li>「後で届けようとポケットに入れて忘れていた」→ 状況次第で横領と認定されるリスクあり</li>
+      <li>遺失物を警察・施設管理者に届けず自分のものにする → 同罪</li>
+    </ul>
+    <div class="highlight">
+      <strong>横領罪（第252条）との違い</strong>：横領罪は「委託を受けて占有している他人の物」を横領する場合（例：保管を任された金品を着服）。占有離脱物横領は「誰の占有にも属さない物」の横領。<strong>警備員が預かった遺失物を着服した場合は横領罪</strong>（より重い）が成立しうる。
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 脅迫・強要・恐喝 -->
+  <div class="card">
+    <h3><span class="icon">④</span>脅迫罪・強要罪・恐喝罪 — 対人犯罪</h3>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">🔴 脅迫罪（刑法第222条）— 成立要件と具体例<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <div class="law-box criminal">
+          <div class="law-label">刑法 第222条</div>
+          生命、身体、自由、名誉又は財産に対し害を加える旨を告知して人を脅迫した者は、<strong>2年以下の拘禁刑又は30万円以下の罰金</strong>に処する。<br>
+          第2項：親族の生命・身体・自由・名誉・財産に対する告知も同様。
+        </div>
+        <p style="font-weight:700;margin:.6rem 0 .3rem;">成立の3要件</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body"><strong>被害者本人または親族への告知</strong>恋人・親友は対象外。</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body"><strong>生命・身体・自由・名誉・財産への害の告知</strong>5つの法益のいずれかが対象。</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body"><strong>害を加える旨の告知であること</strong>実現可能性は問わない。「そんなつもりじゃなかった」は通用しない。</div></div>
+        </div>
+        <table style="margin-top:.8rem;">
+          <tr><th>告知手段</th><th>成立</th></tr>
+          <tr><td>口頭・電話</td><td>✅ 成立</td></tr>
+          <tr><td>メール・SNS</td><td>✅ 成立</td></tr>
+          <tr><td>手紙・置き手紙</td><td>✅ 成立</td></tr>
+          <tr><td>第三者を通じた伝言</td><td>✅ 成立</td></tr>
+        </table>
+        <div class="case-box">
+          <div class="case-label">⚠ 警備員が陥りやすい場面</div>
+          立ち退きを求める際や、不審者対応時に「警察を呼ぶ」「訴える」と言うことは正当な権利行使の範囲。しかし「痛い目に遭わせる」「後悔させる」「仕事を邪魔してやる」などの発言は脅迫罪になりうる。
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">🟡 強要罪（刑法第223条）— 脅迫との違い<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <div class="law-box criminal">
+          <div class="law-label">刑法 第223条</div>
+          生命・身体・自由・名誉・財産に対し害を加える旨を告知して<strong>脅迫し、または暴行を用いて、人に義務のないことを行わせ、または権利行使を妨害</strong>した者は、<strong>3年以下の拘禁刑</strong>に処する。
+        </div>
+        <table>
+          <tr><th></th><th>脅迫罪</th><th>強要罪</th></tr>
+          <tr><td>行為</td><td>害の告知のみ</td><td>告知＋<strong>相手に何かをさせる</strong>（または妨害する）</td></tr>
+          <tr><td>法定刑</td><td>2年以下の拘禁刑/30万円以下の罰金</td><td>3年以下の拘禁刑</td></tr>
+          <tr><td>例</td><td>「お前を痛めつける」と言う</td><td>「痛めつける」と言って謝罪文を書かせる</td></tr>
+        </table>
+        <div class="warn">⚠ 不審者を現行犯逮捕した際、「警察に引き渡してほしければ謝罪しろ」と強いる行為は強要罪が成立する。</div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">🟠 恐喝罪（刑法第249条）— 脅しによる財物取得<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <div class="law-box criminal">
+          <div class="law-label">刑法 第249条</div>
+          人を恐喝して財物を交付させた者は、<strong>10年以下の拘禁刑</strong>に処する。
+        </div>
+        <table>
+          <tr><th></th><th>脅迫罪</th><th>強要罪</th><th>恐喝罪</th></tr>
+          <tr><td>目的</td><td>相手を恐れさせる</td><td>行為を強制する</td><td><strong>財物を取得する</strong></td></tr>
+          <tr><td>手段</td><td>害の告知</td><td>害の告知＋暴行</td><td>害の告知＋暴行</td></tr>
+          <tr><td>法定刑</td><td>2年以下/30万円以下</td><td>3年以下</td><td><strong>10年以下</strong></td></tr>
+        </table>
+        <div class="highlight">恐喝罪は詐欺罪と同じく10年以下の拘禁刑。「示談金を払わなければ訴える」と言いながら過大な金銭を要求する行為は恐喝罪になりうる。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     S2: 刑事訴訟法
+════════════════════════════════════════════════ -->
+<div id="s2" class="section">
+  <div class="sec-title"><span class="sec-num">02</span>刑事訴訟法（刑訴法）</div>
+
+  <div class="card">
+    <h3><span class="icon">①</span>警察の捜査への対応 — 任意・強制・照会書</h3>
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem;">警備員・警備会社が警察から映像や情報の提出を求められた際の法律と正しい手順。</p>
+
+    <table>
+      <tr><th>種類</th><th>根拠</th><th>対応方針</th></tr>
+      <tr>
+        <td><strong>任意捜査</strong><br>「ちょっと見せて」</td>
+        <td>法的強制力なし</td>
+        <td><strong>会社規定（プライバシー保護・機密保持）が優先</strong>。断ることができる。上司・本部への報告を徹底。</td>
+      </tr>
+      <tr>
+        <td><strong>捜査事項照会書</strong><br>（刑訴法第197条2項）</td>
+        <td>警察署長名義の公文書</td>
+        <td>法的な回答義務が生じる（または協力の法的根拠となる）。責任者への即報が必要。</td>
+      </tr>
+      <tr>
+        <td><strong>強制捜査</strong><br>（差押・捜索令状）</td>
+        <td>裁判官発行の令状</td>
+        <td><strong>法律が会社規定に優先</strong>。拒否すると「公務執行妨害」「証拠隠滅」のリスク。立ち会いのもとで対応。</td>
+      </tr>
+    </table>
+
+    <div class="highlight">
+      <strong>優先順位の原則</strong>：任意捜査 → 会社規定が優先 ／ 強制捜査（令状あり）→ 法律が優先<br>
+      捜査事項照会書は令状ではないが公文書であり、事実上の協力義務が生じる。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">②</span>現場警備員の「正しいステップ」— マニュアル化推奨</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num green">1</div>
+        <div class="step-body">
+          <strong>身分証の確認</strong>
+          警察手帳を提示してもらい、<strong>所属・氏名・電話番号</strong>を記録する（メモを必ず取る）。
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num green">2</div>
+        <div class="step-body">
+          <strong>目的・範囲の確認</strong>
+          「何の事件の、どの日時・場所の映像が必要か」を具体的に確認しメモを取る。
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num green">3</div>
+        <div class="step-body">
+          <strong>上司・本部への即報</strong>
+          「私の判断ではお見せできません。会社規定により<strong>責任者の許可と正式な文書（照会書）</strong>が必要です」と伝え、即座に上司へ報告する。<br>
+          <small style="color:var(--muted)">▶ 警察官も現場判断が難しいことは理解している。「組織として動いている」と示せば無理強いはされない。</small>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num red">4</div>
+        <div class="step-body">
+          <strong>令状の有無を確認（強制捜査の場合）</strong>
+          令状がある場合は<strong>即座に責任者へ連絡し、立ち会いのもとで対応</strong>する。令状の内容（対象物・期間）を確認し、範囲外の提供は不要。
+        </div>
+      </div>
+    </div>
+    <div class="warn">
+      ⚠ <strong>絶対にやってはいけないこと</strong><br>
+      ・令状なしで映像をその場で見せる（後から会社規定違反を問われる）<br>
+      ・令状があるのに拒否・逃走・証拠を隠す（公務執行妨害・証拠隠滅罪）<br>
+      ・警察の言葉を信じて口頭のみで応じる（書面を必ず求めること）
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">③</span>私人逮捕（現行犯逮捕）— 刑訴法第213条</h3>
+    <div class="law-box">
+      <div class="law-label">刑事訴訟法 第213条</div>
+      現行犯人は、何人でも、<strong>逮捕状なくしてこれを逮捕することができる</strong>。
+    </div>
+    <div class="law-box">
+      <div class="law-label">刑事訴訟法 第214条</div>
+      検察官、検察事務官及び司法警察職員以外の者は、現行犯人を逮捕したときは、<strong>直ちに</strong>これを地方検察庁若しくは区検察庁の検察官又は司法警察職員に引き渡さなければならない。
+    </div>
+    <div class="grid-2">
+      <div class="grid-card green">
+        <h4>✅ できること</h4>
+        <p>現行犯人の身柄確保（最小限の実力行使）。警察到着まで逃走防止。現場・証拠の保全。警察への連絡。</p>
+      </div>
+      <div class="grid-card red">
+        <h4>❌ できないこと</h4>
+        <p>長時間の拘束・監禁（監禁罪）。自白の強要（強要罪）。身体的・精神的拷問。令状なしの所持品強制検査。</p>
+      </div>
+    </div>
+    <div class="highlight">
+      <strong>「直ちに」の意味</strong>：逮捕後は<strong>可能な限り速やかに</strong>警察に引き渡す義務がある。「後で引き渡せばいい」という考えは誤り。引き渡しが遅れるほど監禁罪のリスクが高まる。
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     S3: 遺失物法
+════════════════════════════════════════════════ -->
+<div id="s3" class="section">
+  <div class="sec-title"><span class="sec-num">03</span>遺失物法</div>
+
+  <div class="card">
+    <h3><span class="icon">①</span>遺失物法の基本構造</h3>
+    <div class="law-box green">
+      <div class="law-label">遺失物法の目的</div>
+      遺失物・埋蔵物その他の物件の取扱いに関し必要な事項を定め、<strong>遺失者等の権利の保護</strong>及び<strong>拾得者等に対する適正な報労</strong>を図るとともに、警察事務の適正な運営に資すること。
+    </div>
+    <div class="grid-2">
+      <div class="grid-card">
+        <h4>施設占有者の義務</h4>
+        <p>施設内で拾得された遺失物は<strong>施設占有者（管理者）に提出</strong>する。施設占有者は<strong>24時間以内</strong>に警察署に提出または届け出なければならない。</p>
+      </div>
+      <div class="grid-card gold">
+        <h4>拾得者の権利</h4>
+        <p>遺失者が判明し物件が返還された場合、拾得者は<strong>物件価格の5〜20%</strong>の報労金を請求できる。施設占有者が提出した場合は施設と拾得者で分配。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">②</span>場所別・届出先リスト</h3>
+    <table>
+      <tr><th>場所</th><th>施設占有者</th><th>警備員の対応</th></tr>
+      <tr>
+        <td>学校敷地内</td>
+        <td>学校長・教育委員会</td>
+        <td>学校の事務室・管理職に提出。学校の規定に従い処理。24時間以内に警察への届出が必要。</td>
+      </tr>
+      <tr>
+        <td>学校外の公道</td>
+        <td>なし（警察が直接担当）</td>
+        <td><strong>最寄りの警察署または交番</strong>に届け出る（拾得者として）。</td>
+      </tr>
+      <tr>
+        <td>夏季開放中のプール</td>
+        <td>施設管理者（学校・自治体）</td>
+        <td>施設の遺失物台帳に記録し、管理者に提出。<strong>24時間以内</strong>に警察への届出。詳細記録が必須。</td>
+      </tr>
+      <tr>
+        <td>商業施設・ショッピングモール</td>
+        <td>施設管理者</td>
+        <td>インフォメーションセンター・管理室へ。施設規定に従い24時間以内に警察届出。</td>
+      </tr>
+      <tr>
+        <td>駅・交通機関内</td>
+        <td>鉄道会社等</td>
+        <td>駅員・鉄道職員に提出（鉄道会社が警察との連携を担う）。</td>
+      </tr>
+    </table>
+
+    <div class="highlight">
+      <strong>「魔の24時間」ルール</strong>：施設内で拾得した物件は<strong>24時間以内</strong>に警察への報告・届出が必要。この24時間を過ぎると施設占有者・警備員が<strong>占有離脱物横領罪に問われるリスク</strong>が生じる。拾得者の権利（報労金）も24時間内の適切な処理が前提。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">③</span>遺失物の記録・処理手順（警備員実務）</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>詳細記録（発見時）</strong>
+          発見日時・場所・状況。物品の種類・ブランド・色・傷・汚れ・名前の有無。発見者の氏名・連絡先。写真撮影（可能な場合）。
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>施設管理者への提出</strong>
+          施設の遺失物台帳（またはシステム）に記録し、物品を管理者へ引き渡す。受領確認のサインをもらう。
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num gold">3</div>
+        <div class="step-body">
+          <strong>24時間以内に警察届出</strong>
+          管理者が警察署に届け出る。警備員は管理者に24時間ルールを確認・催促する役割を担う。
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <strong>保管・管理</strong>
+          警察への届出後は指定の保管場所で適切に管理。貴重品は施錠保管。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">④</span>貴重品・危険物の特別対応</h3>
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">💳 財布・スマホ・身分証などの貴重品<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <ul class="styled-list">
+          <li>現金の有無・金額を<strong>第三者立ち会いのもとで確認</strong>し、台帳に記録する（後の「なくなった」主張への証拠）</li>
+          <li>スマホ・PCは電源を切らず<strong>そのままの状態</strong>で保管（操作・確認はしない）</li>
+          <li>身分証は氏名・住所が分かるため、遺失者への連絡に活用できるが<strong>個人情報保護の観点で慎重に</strong>取り扱う</li>
+          <li>クレジットカードは使用停止の可能性があるため<strong>速やかな警察届出</strong>が重要</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">⚠ 不審物・爆発物が疑われる場合の初動対応<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <div class="steps">
+          <div class="step"><div class="step-num red">1</div><div class="step-body"><strong>触らない・動かさない・電波をかけない</strong>スマホ・無線機は不審物から離れた場所で使用。</div></div>
+          <div class="step"><div class="step-num red">2</div><div class="step-body"><strong>周辺の人を安全な場所へ誘導する</strong>半径最低50m以上を目安に退避。</div></div>
+          <div class="step"><div class="step-num red">3</div><div class="step-body"><strong>110番・119番に通報</strong>場所・外観・大きさ・発見状況を正確に伝える。</div></div>
+          <div class="step"><div class="step-num red">4</div><div class="step-body"><strong>施設管理者・上位管理者への報告</strong>警察・消防が到着するまで現場を保全し誘導を継続。</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-top:3px solid var(--accent);margin-top:1rem;">
+      <div class="case-label">⚠ トラブル事例：「ポケットに入れて忘れた」</div>
+      <p style="font-size:.87rem;line-height:1.8;">拾得した物品を「後で届けようとポケットに入れていたが忘れてしまった」ケース。<br><br>
+      <strong>法的リスク</strong>：主観的には忘れただけでも、客観的には自分の支配下に置いていた事実がある。時間が経過するほど「横領の故意あり」と認定されやすく、<strong>占有離脱物横領罪</strong>が成立しうる。<br><br>
+      <strong>対策</strong>：拾得したら<strong>即座に</strong>管理者に提出し台帳に記録する。「後で」は絶対に禁止。</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     S4: 民法
+════════════════════════════════════════════════ -->
+<div id="s4" class="section">
+  <div class="sec-title"><span class="sec-num">04</span>民法</div>
+
+  <div class="card">
+    <h3><span class="icon">①</span>民法と警備業法の違い</h3>
+    <div class="grid-2">
+      <div class="grid-card blue">
+        <h4>📋 警備業法（行政法）</h4>
+        <p>守らないと<strong>営業停止・許可取消・罰金</strong>などの行政処分。国家と警備業者の関係を規律。</p>
+      </div>
+      <div class="grid-card purple">
+        <h4>⚖ 民法（私法）</h4>
+        <p>守らないと<strong>損害賠償（お金を払う）</strong>義務が発生。個人・会社と契約相手・第三者の関係を規律。</p>
+      </div>
+    </div>
+    <div class="info">
+      <strong>なぜ警備員に民法知識が必要か</strong>：事故が起きた際の損害賠償の仕組みを理解することで、自分・会社・お客さまへのリスクを正しく認識し、慎重な行動を取れるようになるから。
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="card">
+    <h3><span class="icon">②</span>警備実務に関わる民法 3大ポイント</h3>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">① 債務不履行（民法第415条）— 契約を守れなかった時<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <div class="law-box civil">
+          <div class="law-label">民法 第415条</div>
+          債務者がその債務の本旨に従った履行をしないときは、債権者は、これによって生じた損害の賠償を請求することができる。
+        </div>
+        警備契約に基づいた「鍵をかける」「巡回する」という<strong>約束（債務）を果たさなかった</strong>ために損害が出た場合、警備会社は損害賠償を負う。
+        <div class="grid-2" style="margin-top:.8rem;">
+          <div class="grid-card red">
+            <h4>典型的な債務不履行</h4>
+            <p>寝坊で配置につかなかった、巡回ルートを飛ばした、施錠確認を怠った、報告書を虚偽記載した。</p>
+          </div>
+          <div class="grid-card">
+            <h4>警備員個人への影響</h4>
+            <p>会社が賠償した後、<strong>故意・不注意があった警備員個人</strong>に対して求償（返金要求）が行われる場合がある。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">② 不法行為（民法第709条）— 他人に損害を与えた時<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <div class="law-box civil">
+          <div class="law-label">民法 第709条</div>
+          故意又は過失によって他人の権利又は法律上保護される利益を侵害した者は、これによって生じた損害を賠償する責任を負う。
+        </div>
+        契約の有無を問わず適用される。損害賠償は原則として<strong>金銭</strong>で支払う（第417条）。
+        <table style="margin-top:.8rem;">
+          <tr><th>事例</th><th>説明</th></tr>
+          <tr><td>交通誘導のミスで車が接触事故を起こした</td><td>警備員の過失による不法行為責任</td></tr>
+          <tr><td>巡回中に商品棚を倒して器物を破損した</td><td>過失による不法行為責任</td></tr>
+          <tr><td>不審者と誤認し一般客を強制的に引き留めた</td><td>故意による不法行為（身体の自由の侵害）</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">③ 使用者責任（民法第715条）— 隊員のミスは会社の責任<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <div class="law-box civil">
+          <div class="law-label">民法 第715条 第1項</div>
+          ある事業のために他人を使用する者は、被用者がその事業の執行について第三者に加えた損害を賠償する責任を負う。ただし、選任及び監督に相当の注意をしたとき（以下略）は、この限りでない。
+        </div>
+        <div class="flow" style="margin:1rem 0;">
+          <div class="flow-box blue">被害者（第三者）</div>
+          <div class="flow-arrow">→ 請求</div>
+          <div class="flow-box">警備会社（使用者）</div>
+          <div class="flow-arrow">→ 求償</div>
+          <div class="flow-box red">警備員個人</div>
+        </div>
+        <ul class="styled-list">
+          <li>被害者は<strong>警備員個人または警備会社のどちらにも</strong>賠償請求できる</li>
+          <li>支払い能力のある会社に請求されるケースが多い</li>
+          <li>会社が賠償後、故意・不注意だった警備員個人に<strong>求償権</strong>（民法第715条第3項）を行使できる</li>
+          <li>ただし求償は<strong>全額認められないのが一般的</strong>（信義則による制限）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="card">
+    <h3><span class="icon">③</span>民法上の正当防衛・緊急避難（第720条）</h3>
+    <table>
+      <tr><th></th><th>正当防衛（刑法的に無罪）</th><th>緊急避難（刑法的に無罪）</th></tr>
+      <tr><td>自分の損害賠償責任</td><td>原則なし</td><td>原則なし</td></tr>
+      <tr><td>加害者への請求</td><td>被害者が加害者に請求できる</td><td>危難の原因者に請求できる場合あり</td></tr>
+      <tr><td>第三者への損害</td><td>加害者に請求できる</td><td><strong>民事上は自分が賠償義務を負う場合あり</strong></td></tr>
+    </table>
+    <div class="warn">
+      ⚠ <strong>緊急避難の注意点</strong>：刑法上は無罪でも、民法第720条第2項により「急迫の危難を避けるため物を損傷した場合」は損害賠償義務が生じることがある。<br>
+      例：倒れてくる看板を避けようとして商店のガラスを割った → 刑法上は無罪だが、<strong>民事上は弁償義務が生じる可能性</strong>がある。
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="card">
+    <h3><span class="icon">④</span>改正民法（2021年施行）— 隣地使用権・越境枝 — 施設警備との関連</h3>
+
+    <div class="highlight">
+      <strong>2021年（令和3年）民法改正</strong>：これまで曖昧だった「隣の土地をどう使ってよいか」のルールが明確化された。施設警備・巡回業務に直結する知識。
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">① 隣地使用権の明確化（民法第209条）<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        塀の修理や境界調査などのためなら、隣の人の<strong>承諾がなくても必要な範囲で隣地を使える</strong>（ただし<strong>事前通知が必要</strong>）。<br><br>
+        <div class="case-box">
+          <div class="case-label">施設警備での場面</div>
+          外壁のヒビ確認やフェンス補修のために隣の敷地に入らなければならない時。「原則は承諾が必要だが、正当な理由があれば立入権がある」と説明できる。<br>
+          ただし<strong>「勝手に入る」ではなく「事前通知」がセット</strong>。通知なく立ち入ると不法侵入と主張される。
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">② ライフライン設置権の新設（民法第213条の2）<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        電気・ガス・水道・ネット回線を引く際、他人の土地を経由しなければならない場合、<strong>承諾なしで設備を設置・使用できる</strong>（事前通知と損害の最小化が条件）。<br><br>
+        <div class="case-box">
+          <div class="case-label">警備員が「不法侵入だ！」と追い返してはいけない場面</div>
+          敷地内に工事業者が入ってきた際、「ライフライン工事ですか？ 事前通知を受けていますか？」と<strong>法に基づいた確認</strong>を行うのがプロの対応。<br>
+          改正により立ち入りが権利として認められているケースがあり、追い返すと<strong>逆に権利妨害</strong>になりうる。
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">③ 越境した枝の切り取り（民法第233条）<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        以前は隣から伸びた枝を勝手に切ることは禁止されていたが、改正後は以下の条件下で<strong>こちらで切除可能</strong>に。<br><br>
+        <table>
+          <tr><th>切除できる条件</th><th>内容</th></tr>
+          <tr><td>催告後も切らない</td><td>催告（2週間程度の猶予）しても切ってくれない場合</td></tr>
+          <tr><td>所有者不明</td><td>所有者が分からない・連絡が取れない場合</td></tr>
+          <tr><td>急迫の事情</td><td>台風など急迫の事情がある場合</td></tr>
+        </table>
+        <div class="case-box">
+          <div class="case-label">防犯カメラを遮る越境枝の対応</div>
+          隣の木が伸びてきて防犯カメラを遮っている・フェンスを破損しそうな場合、まず所有者への催告が必要。<strong>「いつ、どのような催告をしたか」を日報に記録</strong>しておくことが後のトラブル防止につながる。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     S5: 関係法令（道路交通法・不正競争防止法等）
+════════════════════════════════════════════════ -->
+<div id="s5" class="section">
+  <div class="sec-title"><span class="sec-num">05</span>関係法令</div>
+
+  <div class="card">
+    <h3><span class="icon">①</span>道路交通法 — 交通誘導警備との関係</h3>
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">道路使用許可（道路交通法第77条）— 正当業務行為の根拠<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        公道での工事・足場設置・イベント等は<strong>原則として道路交通法違反</strong>になりうるが、<strong>警察署長の道路使用許可</strong>を取得することで正当業務行為として<strong>違法性が阻却</strong>される。<br><br>
+        <table>
+          <tr><th>ポイント</th><th>内容</th></tr>
+          <tr><td><strong>許可証の重要性</strong></td><td>道路使用許可証は「適法に作業している」ことの証明。現場への<strong>掲示・携帯</strong>が必要。</td></tr>
+          <tr><td><strong>無許可行為</strong></td><td>違法となり刑事罰（拘禁刑・罰金）・強制排除の対象。</td></tr>
+          <tr><td><strong>条件違反</strong></td><td>許可条件（時間・場所・安全対策）を守らない場合、許可の<strong>取消・停止処分</strong>。</td></tr>
+          <tr><td><strong>主な許可が必要な場面</strong></td><td>看板設置、工事用足場、クレーン使用の引越、イベント規制など。</td></tr>
+        </table>
+        <div class="highlight">
+          <strong>審査基準</strong>：「交通の安全と円滑」を基準に審査。警備員は許可証のコピーを<strong>必ず携帯</strong>すること。<br>
+          <strong>警備員の役割</strong>：許可取得後、現場での交通誘導を行うことで「正当業務行為」として適法に位置づけられる。
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">警察官による交通整理との違い<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <table>
+          <tr><th></th><th>警察官の交通整理</th><th>警備員の交通誘導</th></tr>
+          <tr><td>根拠</td><td>道路交通法（強制力あり）</td><td>依頼者との契約＋道路使用許可</td></tr>
+          <tr><td>法的強制力</td><td><strong>あり</strong>（違反すれば反則金等）</td><td><strong>なし</strong>（あくまで任意の協力）</td></tr>
+          <tr><td>従わない車両への対応</td><td>停止命令・取締り可能</td><td>強制できない。報告にとどめる。</td></tr>
+        </table>
+        <div class="warn">⚠ 警備員は「止まれ」と命令する権限はない。「お願いする立場」であることを常に意識する。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">②</span>個人情報保護法 — 映像・情報の取扱い</h3>
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">防犯カメラ映像の取扱いルール<span class="arrow">▼</span></div>
+      <div class="acc-body">
+        <ul class="styled-list">
+          <li>防犯カメラの設置・運用は<strong>個人情報保護法</strong>の対象（映像には個人を識別できる情報が含まれる）</li>
+          <li>映像の目的外利用（警備以外への提供・閲覧）は原則禁止</li>
+          <li>警察等への提供は<strong>令状・照会書</strong>等の適切な手続きを経て行う</li>
+          <li>映像の保存期間・廃棄方法は会社規定に従う</li>
+        </ul>
+        <div class="warn">⚠ 警備員が興味本位で映像を閲覧・コピー・外部提供することは<strong>個人情報保護法違反</strong>かつ<strong>職務上の秘密漏洩</strong>として懲戒・刑事処分の対象になりうる。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">③</span>労働関係法令 — 警備員の権利と義務</h3>
+    <table>
+      <tr><th>法令</th><th>警備業に関係する主要事項</th></tr>
+      <tr><td><strong>労働基準法</strong></td><td>労働時間・休憩・深夜業の規定。18歳未満は深夜業（午後10時〜午前5時）禁止。時間外・深夜割増賃金の義務。</td></tr>
+      <tr><td><strong>労働安全衛生法</strong></td><td>安全配慮義務。健康診断の実施義務。熱中症・凍傷など環境リスクへの対策義務。</td></tr>
+      <tr><td><strong>最低賃金法</strong></td><td>都道府県ごとの最低賃金を下回る賃金は違法。警備員も同様に適用。</td></tr>
+    </table>
+    <div class="highlight">
+      <strong>警備業の特殊性</strong>：長時間の立哨・屋外業務・夜間勤務が多い。労働関係法令は警備員を守るための重要なルール。「サービス残業」「休憩なし」は違法であることを認識する。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">④</span>まとめ — 法律知識の優先順位マップ</h3>
+    <div class="flow" style="flex-direction:column;align-items:flex-start;gap:.6rem;margin:1rem 0;">
+      <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
+        <div class="flow-box blue" style="min-width:120px;text-align:center;">日本国憲法</div>
+        <span style="color:var(--muted);font-size:.8rem;">最高法規 — すべての法律の根拠</span>
+      </div>
+      <div style="padding-left:1rem;color:var(--muted);">↓</div>
+      <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
+        <div class="flow-box gold" style="min-width:120px;text-align:center;">刑法・刑訴法</div>
+        <span style="color:var(--muted);font-size:.8rem;">犯罪と刑罰 — 「何をしてはいけないか」</span>
+      </div>
+      <div style="padding-left:1rem;color:var(--muted);">↓</div>
+      <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
+        <div class="flow-box" style="min-width:120px;text-align:center;border-color:#8e44ad;color:#8e44ad;background:#f5eef8;">民法</div>
+        <span style="color:var(--muted);font-size:.8rem;">私人間のルール — 「損害が出たらどうなるか」</span>
+      </div>
+      <div style="padding-left:1rem;color:var(--muted);">↓</div>
+      <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
+        <div class="flow-box green" style="min-width:120px;text-align:center;">警備業法</div>
+        <span style="color:var(--muted);font-size:.8rem;">行政法 — 「警備業をどう営むか」</span>
+      </div>
+      <div style="padding-left:1rem;color:var(--muted);">↓</div>
+      <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
+        <div class="flow-box" style="min-width:120px;text-align:center;">関係法令</div>
+        <span style="color:var(--muted);font-size:.8rem;">道路交通法・個人情報保護法・労働関係法令</span>
+      </div>
+    </div>
+    <div class="ok">
+      <strong>✅ 警備員として覚えておくべき一言まとめ</strong><br>
+      「<strong>権限はないが義務がある</strong>」——警備員には警察官のような法的強制力はないが、契約上・法律上の義務を果たさなければ刑事・民事の双方で責任を負う。すべての行動は「法律の範囲内で、丁寧なお願いとして」行うこと。
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleAcc(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  header.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>
